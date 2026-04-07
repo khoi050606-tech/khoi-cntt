@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Chi tiết phim</title>
+
+<style>
+body {
+    margin: 0;
+    background: #0b0f1a;
+    color: white;
+    font-family: Arial;
+}
+
+/* khung chính */
+.container {
+    padding: 15px;
+}
+
+/* banner */
+.banner {
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* nút xem phim */
+.play-btn {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff3b3b;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* tên phim */
+.title {
+    margin-top: 15px;
+    color: orange;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* info box */
+.info {
+    background: #111;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.info p {
+    margin: 6px 0;
+}
+
+/* nút quay lại */
+.back {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #ccc;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<body>
+
+<div class="container">
+
+    <a href="index.html" class="back">⬅ Quay lại</a>
+
+    <div class="banner">
+        <img id="poster" src="">
+        <a id="playBtn" href="#" class="back-btn" 
+           style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); background: #ff3b3b; padding: 12px 25px; border-radius: 6px; text-decoration: none; color: white; font-weight: bold;">
+           NGHE NHẠC
+        </a>
+    </div>
+
+    <div class="title" id="title"></div>
+
+    <div class="info">
+        <p id="status"></p>
+        <p id="episode"></p>
+        <p id="duration"></p>
+        <p id="total"></p>
+    </div>
+
+</div>
+
+<script>
+// lấy id từ URL
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+const movies = {
+    aihaychungo: {
+        title: "aihaychungo",
+        poster: "images/aihaychungo.jpg",
+        status: "1 video",
+        episode: "kh có",
+        duration: "4p",
+        total: "1"
+    },
+    hoicuoiem: {
+        title: "Hỏi Cưới Em",
+        poster: "images/hoicuoiem.jpg", // Đảm bảo đường dẫn ảnh này chính xác
+        status: "1 video",
+        episode: "Không có",
+        duration: "3p50",
+        total: "1"
+    },
+    vaycuoi: {
+        title: "VÁY CƯỚI",
+        poster: "images/vaycuoi.jpg", // Đảm bảo đường dẫn ảnh này chính xác
+        status: "1 video",
+        episode: "Không có",
+        duration: "3p50",
+        total: "1"
+    },
+    rulaicauho: {
+        title: "RU LẠI CÂU HÒ",
+        poster: "images/rulaicauho.jpg", // Đảm bảo đường dẫn ảnh này chính xác
+        status: "1 video",
+        episode: "Không có",
+        duration: "4p",
+        total: "1"
+    },
+    khitalon: {
+        title: "KHI TA LỚN",
+        poster: "images/khitalon.jpg", // Đảm bảo đường dẫn ảnh này chính xác
+        status: "1 video",
+        episode: "Không có",
+        duration: "3p50",
+        total: "1"
+    }
+};
+
+const movie = movies[id];
+
+if (movie) {
+    document.getElementById("title").innerText = movie.title;
+    document.getElementById("poster").src = movie.poster;
+    document.getElementById("status").innerText = movie.status;
+    document.getElementById("episode").innerText = movie.episode;
+    document.getElementById("duration").innerText = movie.duration;
+    document.getElementById("total").innerText = movie.total;
+    
+    // ĐÃ SỬA: Gán link cho nút bấm dựa vào ID "playBtn"
+    const nutXemPhim = document.getElementById("playBtn");
+    if (nutXemPhim) {
+        nutXemPhim.href = "watch.html?id=" + id;
+    }
+} else {
+    document.body.innerHTML = "<h2 style='color:white; text-align:center;'>Không tìm thấy phim</h2>";
+}
+</script>
+
+</body>
+</script>
+
+</body>
+</html>
