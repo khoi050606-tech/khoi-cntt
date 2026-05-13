@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - TVU</title>
+    <!-- Sử dụng Font Awesome để lấy icon thư và khóa -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-card {
+            background: white;
+            width: 450px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .header h3 {
+            font-size: 16px;
+            margin: 5px 0;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        .header p {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 5px 0;
+            color: #000;
+            line-height: 1.4;
+        }
+
+        .form-body {
+            padding: 20px;
+        }
+
+        /* Group input và icon */
+        .input-group {
+            display: flex;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .input-group input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .input-group .icon-box {
+            background: #e9ecef;
+            padding: 10px;
+            min-width: 45px;
+            text-align: center;
+            color: #555;
+            border-left: 1px solid #ccc;
+        }
+
+        /* Hàng Nhớ mật khẩu và Đăng nhập */
+        .remember-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .remember-me input {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-login {
+            background-color: #007bff;
+            width: 60%; /* Nút đăng nhập ngắn hơn theo ảnh */
+            margin-bottom: 0;
+        }
+
+        .btn-ms {
+            background-color: #007bff;
+            margin-top: 15px;
+        }
+
+        .btn-tvu {
+            background-color: #dc3545;
+        }
+
+        .footer-link {
+            display: inline-block;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <!-- Phần đầu với Logo và Tiêu đề -->
+        <div class="header">
+            <img src="TVU-RGB.png" alt="TVU Logo" class="logo">
+            <h3>Phần mềm tin học</h3>
+            <p>ĐÁNH GIÁ KẾT QUẢ RÈN LUYỆN CHO SINH VIÊN CHÍNH QUY TẠI ĐẠI HỌC TRÀ VINH</p>
+        </div>
+
+        <div class="form-body">
+            <!-- Ô nhập Email -->
+            <div class="input-group">
+                <input type="text" placeholder="Email">
+                <div class="icon-box"><i class="fas fa-envelope"></i></div>
+            </div>
+
+            <!-- Ô nhập Mật khẩu -->
+            <div class="input-group">
+                <input type="password" placeholder="Mật khẩu">
+                <div class="icon-box"><i class="fas fa-lock"></i></div>
+            </div>
+
+            <!-- Hàng Nhớ mật khẩu & Đăng nhập -->
+            <div class="remember-row">
+                <label class="remember-me">
+                    <input type="checkbox"> Nhớ mật khẩu
+                </label>
+                <button class="btn btn-login">Đăng nhập</button>
+            </div>
+
+            <!-- Các nút đăng nhập tài khoản trường -->
+            <button class="btn btn-ms">Sinh viên (Đăng nhập bằng Email Microsoft)</button>
+            <button class="btn btn-tvu">Giảng viên (Đăng nhập bằng Email TVU)</button>
+            
+            <a href="#" class="footer-link">Quên mật khẩu?</a>
+        </div>
+    </div>
+
+</body>
+</html>
